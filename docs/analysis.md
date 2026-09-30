@@ -2,7 +2,7 @@
 
 ## What is being corrected
 
-HBLR visualizes BEV values and representations from frequently used autonomous-driving models, including LAV, TransFuser, Think2Drive, Roach, and ThinkTwice. Unidentified model names are marked as `xx` in the main README. The four cases concern the construction of BEV labels and maps. A false marking in a generated target can become training supervision, so an apparent perception failure should first be separated from an error in the target itself. The camera views and original/revised BEV pairs support qualitative inspection of that distinction.
+HBLR visualizes BEV values and representations from frequently used autonomous-driving models, including LAV, TransFuser, Think2Drive, Roach, and ThinkTwice. The four cases concern the construction of BEV labels and maps. A false marking in a generated target can become training supervision, so an apparent perception failure should first be separated from an error in the target itself. The camera views and original/revised BEV pairs support qualitative inspection of that distinction.
 
 ## Map geometry and rendered appearance
 
