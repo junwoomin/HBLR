@@ -11,4 +11,3 @@
 | 차선 존재 여부 · TransFuser · Think2Drive · LAV | [Case 2](../README.md#case-2-lane-presence) |
 | 주행 가능 영역 | [Case 3](../README.md#case-3-drivable-area) |
 | 도로 고도 · LAV · Roach · ThinkTwice | [Case 4](../README.md#case-4-road-elevation) |
-| BEV 생성 배경 | [BEV generation background](../README.md#bev-generation-background) |

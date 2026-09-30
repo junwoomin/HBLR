@@ -108,37 +108,3 @@ The panel shows driving views, BEV representations, and feature visualizations a
 ![original and revised BEV road-elevation comparison](assets/comparisons/en/case4-01.png)
 
 ![original and revised BEV comparison beneath an overpass](assets/comparisons/en/case4-02.png)
-
-## BEV generation background
-
-The following notes and excerpts give context for CARLA/OpenDRIVE map data and BEV generation. The diagram records the relationships considered during the investigation.
-
-![BEV generation relationships and investigation notes](assets/comparisons/en/bev-generation-background.png)
-
-### Rendering and aerial-map generation
-
-![Rendering and aerial-map generation context 1](assets/images/image1.png)
-
-![Rendering and aerial-map generation context 2](assets/images/image2.png)
-
-![Rendering and aerial-map generation context 3](assets/images/image3.png)
-
-![CARLA map visualization with English explanation](assets/comparisons/en/carla-map-background.png)
-
-![Rendering and aerial-map generation context 6](assets/images/image6.png)
-
-### Map topology
-
-![CARLA map topology context 1](assets/images/image7.png)
-
-![CARLA map topology context 2](assets/images/image8.png)
-
-![CARLA map topology context 3](assets/images/image9.png)
-
-### Lane-marking consistency
-
-![Lane-invasion and visible-marking consistency context 1](assets/images/image12.png)
-
-## Technical analysis
-
-[BEV label consistency analysis](docs/analysis.md) covers map geometry, rasterization, and interpretation of the four cases. The examples here are qualitative comparisons; numerical evaluation is not included.
