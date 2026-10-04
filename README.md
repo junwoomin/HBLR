@@ -25,6 +25,18 @@ BEV segmentation models learn against generated ground-truth labels. For example
 
 HBLR starts from the need to inspect the training and input-data generation pipeline before attributing these errors solely to model architecture. The model comparison panels include BEV inputs, predictions, and feature visualizations, whose roles should be distinguished. See the [technical analysis](docs/analysis.md) for the generation background and error analysis.
 
+## Related research: SimBEV (2025)
+
+HBLR investigated inaccurate CARLA-based BEV GT generation around the same period as SimBEV, analyzing error cases and improving label generation. Similar concerns are addressed in **SimBEV**, released in 2025.
+
+Its Related Work and §3.4, Figure 5 discuss inaccurate waypoint-only road labels, overhead-view occlusions from vehicles, vegetation, and structures, and limitations around roads at different elevations such as overpasses.
+
+This establishes **BEV GT accuracy and generation as a research problem also addressed in recent literature**. HBLR focuses on comparing and correcting marking type, marking presence, drivable-area geometry, and elevation-related inconsistencies.
+
+- [SimBEV paper: A Synthetic Multi-Task Multi-Sensor Driving Data Generation Tool and Dataset](https://arxiv.org/abs/2502.01894)
+- [Full text: GT generation issues and methods](https://arxiv.org/html/2502.01894v2)
+- [SimBEV implementation](https://github.com/GoodarzMehr/SimBEV)
+
 ## Models and BEV visualizations
 
 | Model | Examples in this README |
