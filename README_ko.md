@@ -25,6 +25,18 @@ BEV segmentation 모델은 생성된 GT를 정답으로 삼아 학습합니다. 
 
 HBLR은 이런 오류를 모델 구조의 문제로만 해석하기 전에, 학습·입력 데이터의 생성 과정부터 점검해야 한다는 문제의식에서 출발했습니다. 모델별 비교에는 BEV 입력·예측·특징 시각화가 포함되므로 각 결과의 역할을 구분해 살펴봅니다. 상세한 생성 방식과 오류 분석은 [기술 분석](docs/analysis.md)에 정리했습니다.
 
+## 관련 연구: SimBEV (2025)
+
+HBLR은 SimBEV와 비슷한 시기에 CARLA 기반 BEV GT 생성의 부정확성을 인지하고, 오류 사례 분석과 생성 방식 개선을 연구한 작업입니다. 이러한 문제의식은 2025년에 공개된 **SimBEV**에서도 다뤄집니다.
+
+SimBEV 논문의 Related Work와 §3.4, Figure 5는 waypoint에만 의존할 때 도로 GT가 부정확해질 수 있고, 상공 카메라도 차량·식생·구조물에 가려 불완전한 GT를 만들 수 있음을 설명합니다. 고가도로처럼 높이가 다른 도로가 겹치는 상황도 일반적인 생성 방식의 한계로 다룹니다.
+
+이는 **BEV GT의 정확성과 생성 방식 자체가 최근 연구에서도 다뤄지는 연구 과제**임을 보여줍니다. HBLR은 차선 유형·존재 여부, 도로 영역, 고도에 따른 불일치를 비교하고 수정하는 데 초점을 두었습니다.
+
+- [SimBEV 논문: A Synthetic Multi-Task Multi-Sensor Driving Data Generation Tool and Dataset](https://arxiv.org/abs/2502.01894)
+- [논문 본문: GT 생성 문제와 처리 방법](https://arxiv.org/html/2502.01894v2)
+- [SimBEV 구현 코드](https://github.com/GoodarzMehr/SimBEV)
+
 ## 모델별 BEV 시각화
 
 | 모델 | 본문에 포함한 예시 |
