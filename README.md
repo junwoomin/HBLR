@@ -12,6 +12,13 @@ The issue extends beyond label generation. Comparisons of BEV representations us
 
 The colored circles mark the locations being compared in the camera views and BEV panels. `Ori` is the existing representation; `Our` is the HBLR revision.
 
+## Research paper and implementation
+
+This repository documents the full scope of the HBLR research paper, including the problem definition for BEV GT generation, the proposed corrections, and model-specific comparisons. The CARLA data collection and BEV GT generation code is maintained in the **`data_gen` module of AGILEQ-Training**.
+
+- [Implementation: AGILEQ-Training / data_gen](https://github.com/SungjinDavidLee/AGILEQ-Training/tree/main/data_gen)
+- [English setup and BEV generation documentation](https://github.com/SungjinDavidLee/AGILEQ-Training/blob/main/data_gen/README.md)
+
 ## GT errors and model training
 
 BEV segmentation models learn against generated ground-truth labels. For example, the [public TransFuser training code](https://github.com/autonomousvision/transfuser/blob/2022/team_code_transfuser/model.py) uses cross-entropy between BEV predictions and the `bev` labels. If a label contains a nonexistent marking or omits a real one, the training objective encourages predictions to match that incorrect target. When BEV is used as a policy input, inaccurate road representations instead enter the model's observations.
