@@ -4,9 +4,19 @@
 
 [한국어](README_ko.md)
 
-I visualized BEV values and representations from autonomous-driving models I frequently use, and compared their lane markings, drivable areas, and road elevation with camera observations. HBLR brings these model examples together with the original (`Ori`) and revised (`Our`) BEV comparisons.
+HBLR is **a module and analysis project developed to investigate errors in BEV segmentation ground-truth (GT) generation for CARLA-based autonomous-driving research and produce more accurate, consistent labels**.
+
+The inspected BEV generation approaches showed swapped solid/dashed markings, additional or missing markings, and drivable regions inconsistent with the visible road geometry. Examples also showed overpasses and lower roads overlapping when elevation was not properly represented. Simulator-generated labels are not automatically consistent with the scene.
+
+The issue extends beyond label generation. Comparisons of BEV representations used by several existing driving models revealed similar inconsistencies, motivating an analysis of how incorrect labels can enter training supervision or policy inputs. This README explains the observed problems and compares the original GT/BEV representations (`Ori`) with HBLR revisions (`Our`), alongside camera observations and model-specific visualizations.
 
 The colored circles mark the locations being compared in the camera views and BEV panels. `Ori` is the existing representation; `Our` is the HBLR revision.
+
+## GT errors and model training
+
+BEV segmentation models learn against generated ground-truth labels. For example, the [public TransFuser training code](https://github.com/autonomousvision/transfuser/blob/2022/team_code_transfuser/model.py) uses cross-entropy between BEV predictions and the `bev` labels. If a label contains a nonexistent marking or omits a real one, the training objective encourages predictions to match that incorrect target. When BEV is used as a policy input, inaccurate road representations instead enter the model's observations.
+
+HBLR starts from the need to inspect the training and input-data generation pipeline before attributing these errors solely to model architecture. The model comparison panels include BEV inputs, predictions, and feature visualizations, whose roles should be distinguished. See the [technical analysis](docs/analysis.md) for the generation background and error analysis.
 
 ## Models and BEV visualizations
 
