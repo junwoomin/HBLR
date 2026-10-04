@@ -12,6 +12,13 @@ HBLR은 **CARLA 기반 자율주행 연구에서 사용하는 BEV segmentation g
 
 색깔 동그라미는 카메라 관측과 BEV에서 서로 비교할 위치를 표시합니다. `Ori`는 기존 표현, `Our`는 HBLR의 수정 표현입니다.
 
+## 연구 논문과 구현 코드
+
+이 저장소는 HBLR 연구 논문의 전체 내용을 설명하기 위해, BEV GT 생성의 문제 정의와 개선 방법, 모델별 비교 사례를 정리한 자료입니다. 실제 CARLA 데이터 수집 및 BEV GT 생성 코드는 **AGILEQ-Training의 `data_gen` 모듈**에 있습니다.
+
+- [구현 코드: AGILEQ-Training / data_gen](https://github.com/SungjinDavidLee/AGILEQ-Training/tree/main/data_gen)
+- [한국어 실행 방법 및 BEV 생성 설명](https://github.com/SungjinDavidLee/AGILEQ-Training/blob/main/data_gen/README_ko.md)
+
 ## GT 오류와 모델 학습
 
 BEV segmentation 모델은 생성된 GT를 정답으로 삼아 학습합니다. 예를 들어 [TransFuser의 공개 학습 코드](https://github.com/autonomousvision/transfuser/blob/2022/team_code_transfuser/model.py)는 BEV 예측과 `bev` 라벨 사이의 cross-entropy를 손실로 사용합니다. 따라서 라벨에 없는 차선이 그려져 있거나 실제 차선이 빠져 있다면, 학습 과정은 그 잘못된 라벨에 예측을 맞추도록 유도합니다. BEV를 정책 입력으로 사용하는 경우에는 부정확한 도로 표현이 모델의 관측으로 전달됩니다.
