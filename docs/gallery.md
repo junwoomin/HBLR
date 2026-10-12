@@ -2,7 +2,7 @@
 
 모델별 BEV 시각화와 비교 이미지를 [HBLR 본문](../README.md)에 통합했습니다. 동그라미와 화살표를 포함한 전체 비교를 본문에서 바로 볼 수 있습니다.
 
-[한국어 본문](../README_ko.md) · [Technical analysis](analysis.md)
+[한국어 본문](README_ko.md) · [Technical analysis](analysis.md)
 
 | 내용 | 본문 위치 |
 | --- | --- |

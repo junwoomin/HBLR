@@ -2,7 +2,7 @@
 
 # HBLR
 
-[한국어](README_ko.md)
+[한국어](docs/README_ko.md)
 
 HBLR is **a module and analysis project developed to investigate errors in BEV segmentation ground-truth (GT) generation for CARLA-based autonomous-driving research and produce more accurate, consistent labels**.
 

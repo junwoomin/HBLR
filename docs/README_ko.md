@@ -1,8 +1,8 @@
-![동그라미로 표시한 차선 BEV 비교](assets/comparisons/ko/case1-02.png)
+![동그라미로 표시한 차선 BEV 비교](../assets/comparisons/ko/case1-02.png)
 
 # HBLR
 
-[English](README.md)
+[English](../README.md)
 
 HBLR은 **CARLA 기반 자율주행 연구에서 사용하는 BEV segmentation ground truth(GT)의 생성 오류를 분석하고, 더 정확하고 일관된 GT를 만들기 위해 개발한 모듈 및 분석 프로젝트**입니다.
 
@@ -23,7 +23,7 @@ HBLR은 **CARLA 기반 자율주행 연구에서 사용하는 BEV segmentation g
 
 BEV segmentation 모델은 생성된 GT를 정답으로 삼아 학습합니다. 예를 들어 [TransFuser의 공개 학습 코드](https://github.com/autonomousvision/transfuser/blob/2022/team_code_transfuser/model.py)는 BEV 예측과 `bev` 라벨 사이의 cross-entropy를 손실로 사용합니다. 따라서 라벨에 없는 차선이 그려져 있거나 실제 차선이 빠져 있다면, 학습 과정은 그 잘못된 라벨에 예측을 맞추도록 유도합니다. BEV를 정책 입력으로 사용하는 경우에는 부정확한 도로 표현이 모델의 관측으로 전달됩니다.
 
-HBLR은 이런 오류를 모델 구조의 문제로만 해석하기 전에, 학습·입력 데이터의 생성 과정부터 점검해야 한다는 문제의식에서 출발했습니다. 모델별 비교에는 BEV 입력·예측·특징 시각화가 포함되므로 각 결과의 역할을 구분해 살펴봅니다. 상세한 생성 방식과 오류 분석은 [기술 분석](docs/analysis.md)에 정리했습니다.
+HBLR은 이런 오류를 모델 구조의 문제로만 해석하기 전에, 학습·입력 데이터의 생성 과정부터 점검해야 한다는 문제의식에서 출발했습니다. 모델별 비교에는 BEV 입력·예측·특징 시각화가 포함되므로 각 결과의 역할을 구분해 살펴봅니다. 상세한 생성 방식과 오류 분석은 [기술 분석](analysis.md)에 정리했습니다.
 
 ## 관련 연구: SimBEV (2025)
 
@@ -60,15 +60,15 @@ SimBEV 논문의 Related Work와 §3.4, Figure 5는 waypoint에만 의존할 때
 
 **기존·수정 비교 · `Ori` / `Our`.** 점선과 실선이 카메라 관측과 일치하는지 비교합니다. 동그라미는 중앙선 유형이 다르게 표현되는 위치를 표시합니다.
 
-![기존·수정 BEV 점선과 실선 비교](assets/comparisons/ko/case1-01.png)
+![기존·수정 BEV 점선과 실선 비교](../assets/comparisons/ko/case1-01.png)
 
-![빨간 동그라미로 표시한 차선 유형 비교](assets/comparisons/ko/case1-02.png)
+![빨간 동그라미로 표시한 차선 유형 비교](../assets/comparisons/ko/case1-02.png)
 
 ### LAV BEV 시각화
 
 LAV의 BEV 표현을 주행 장면과 함께 놓고 비교합니다.
 
-![LAV 주행 장면과 BEV 시각화](assets/comparisons/ko/lav-bev.png)
+![LAV 주행 장면과 BEV 시각화](../assets/comparisons/ko/lav-bev.png)
 
 ## 사례 2: 차선 존재 여부
 
@@ -76,41 +76,41 @@ LAV의 BEV 표현을 주행 장면과 함께 놓고 비교합니다.
 
 **`Ori` / `Our` 비교 및 LAV BEV 시각화.**
 
-![동그라미로 표시한 차선 누락과 추가 비교](assets/comparisons/ko/case2-01.png)
+![동그라미로 표시한 차선 누락과 추가 비교](../assets/comparisons/ko/case2-01.png)
 
 ### TransFuser
 
 TransFuser의 BEV 시각화를 기존 표현 및 HBLR의 수정 표현과 함께 보여줍니다.
 
-![TransFuser BEV 시각화와 회전교차로 기존·수정 비교](assets/comparisons/ko/case2-transfuser.png)
+![TransFuser BEV 시각화와 회전교차로 기존·수정 비교](../assets/comparisons/ko/case2-transfuser.png)
 
 ### Think2Drive와 LAV
 
 오른쪽 위는 Think2Drive, 아래쪽은 LAV의 BEV 시각화입니다. 왼쪽 위는 `Ori` / `Our` 비교입니다.
 
-![Think2Drive와 LAV BEV 시각화 및 기존·수정 비교](assets/comparisons/ko/case2-think2drive-lav.png)
+![Think2Drive와 LAV BEV 시각화 및 기존·수정 비교](../assets/comparisons/ko/case2-think2drive-lav.png)
 
 ### LAV 및 추가 비교
 
 동그라미는 주행 장면의 위치와 BEV의 해당 영역을 연결해서 보여줍니다.
 
-![LAV 차선 존재 여부 비교](assets/comparisons/ko/case2-02.png)
+![LAV 차선 존재 여부 비교](../assets/comparisons/ko/case2-02.png)
 
-![차선 존재 여부 비교 3](assets/comparisons/ko/case2-03.png)
+![차선 존재 여부 비교 3](../assets/comparisons/ko/case2-03.png)
 
-![차선 존재 여부 비교 4](assets/comparisons/ko/case2-04.png)
+![차선 존재 여부 비교 4](../assets/comparisons/ko/case2-04.png)
 
-![차선 존재 여부 비교 5](assets/comparisons/ko/case2-05.png)
+![차선 존재 여부 비교 5](../assets/comparisons/ko/case2-05.png)
 
-![차선 존재 여부 비교 6](assets/comparisons/ko/case2-06.png)
+![차선 존재 여부 비교 6](../assets/comparisons/ko/case2-06.png)
 
 ## 사례 3: 주행 가능 영역
 
 **기존·수정 비교 · `Ori` / `Our`.** 주행 가능 영역의 모양을 실제 도로 경계 및 교차로 구조와 비교합니다. 색깔 동그라미는 카메라와 BEV에서 대응하는 영역을 표시합니다. 아래쪽에는 추가 BEV 시각화를 배치했습니다.
 
-![색깔 동그라미로 표시한 주행 가능 영역 비교](assets/comparisons/ko/case3-01.png)
+![색깔 동그라미로 표시한 주행 가능 영역 비교](../assets/comparisons/ko/case3-01.png)
 
-![교차로 형상 비교와 추가 BEV 시각화](assets/comparisons/ko/case3-02.png)
+![교차로 형상 비교와 추가 BEV 시각화](../assets/comparisons/ko/case3-02.png)
 
 ## 사례 4: 도로 고도
 
@@ -120,20 +120,20 @@ TransFuser의 BEV 시각화를 기존 표현 및 HBLR의 수정 표현과 함께
 
 색깔 동그라미로 주행 장면과 LAV BEV의 대응 위치를 표시했습니다.
 
-![색깔 동그라미로 표시한 LAV 고가도로 BEV 시각화](assets/comparisons/ko/case4-lav.png)
+![색깔 동그라미로 표시한 LAV 고가도로 BEV 시각화](../assets/comparisons/ko/case4-lav.png)
 
 ### Roach와 ThinkTwice
 
 Roach와 ThinkTwice의 주행 장면, BEV 표현과 특징 시각화를 함께 보여줍니다.
 
-![Roach와 ThinkTwice 주행 장면·BEV·특징 시각화](assets/comparisons/ko/case4-roach-thinktwice.png)
+![Roach와 ThinkTwice 주행 장면·BEV·특징 시각화](../assets/comparisons/ko/case4-roach-thinktwice.png)
 
-![Roach 고가도로 주변 BEV 시각화](assets/comparisons/ko/case4-roach.png)
+![Roach 고가도로 주변 BEV 시각화](../assets/comparisons/ko/case4-roach.png)
 
 ### 기존·수정 비교
 
 `Ori`와 `Our`를 통해 자차 주변에서 서로 다른 높이의 도로가 어떻게 표현되는지 비교합니다.
 
-![도로 고도에 따른 기존·수정 BEV 비교](assets/comparisons/ko/case4-01.png)
+![도로 고도에 따른 기존·수정 BEV 비교](../assets/comparisons/ko/case4-01.png)
 
-![고가도로 하부 기존·수정 BEV 비교](assets/comparisons/ko/case4-02.png)
+![고가도로 하부 기존·수정 BEV 비교](../assets/comparisons/ko/case4-02.png)
